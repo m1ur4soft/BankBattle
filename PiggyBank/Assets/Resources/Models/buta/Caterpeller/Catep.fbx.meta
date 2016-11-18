@@ -1,0 +1,334 @@
+fileFormatVersion: 2
+guid: 8d92397e7474b274596b5a603d4ff770
+timeCreated: 1478755784
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Camera
+    100002: //RootNode
+    100004: Lamp
+    100006: PMD from Metaseq
+    100008: PMD from Metaseq.001
+    100010: PMD from Metaseq_Arm
+    100012: PMD from Metaseq_Arm.001
+    100014: "\u30AF\u30E9\u30F3\u30AF_L"
+    100016: "\u30AF\u30E9\u30F3\u30AF_L_end"
+    100018: "\u30AF\u30E9\u30F3\u30AF_R"
+    100020: "\u30AF\u30E9\u30F3\u30AF_R_end"
+    100022: "\u5C65\u5E2FLA\u4ED8\u4E0E\u89AA"
+    100024: "\u5C65\u5E2FLA\u4ED8\u4E0E\u89AA_end"
+    100026: "\u5C65\u5E2FL\u4E0A2A"
+    100028: "\u5C65\u5E2FL\u4E0A2B"
+    100030: "\u5C65\u5E2FL\u4E0A2C"
+    100032: "\u5C65\u5E2FL\u4E0A2C_end"
+    100034: "\u5C65\u5E2FL\u4E0B2A"
+    100036: "\u5C65\u5E2FL\u4E0B2B"
+    100038: "\u5C65\u5E2FL\u4E0B2C"
+    100040: "\u5C65\u5E2FL\u4E0B2C_end"
+    100042: "\u5C65\u5E2FL\u4E0B4A"
+    100044: "\u5C65\u5E2FL\u4E0B4B"
+    100046: "\u5C65\u5E2FL\u4E0B4C"
+    100048: "\u5C65\u5E2FL\u4E0B4C_end"
+    100050: "\u5C65\u5E2FL\u4E0B6A"
+    100052: "\u5C65\u5E2FL\u4E0B6B"
+    100054: "\u5C65\u5E2FL\u4E0B6C"
+    100056: "\u5C65\u5E2FL\u4E0B6C_end"
+    100058: "\u5C65\u5E2FL\u8A98\u5C0E"
+    100060: "\u5C65\u5E2FL\u8A98\u5C0E+"
+    100062: "\u5C65\u5E2FL\u8A98\u5C0E+_end"
+    100064: "\u5C65\u5E2FL\u8A98\u5C0E_end"
+    100066: "\u5C65\u5E2FL\u99C6\u52D5"
+    100068: "\u5C65\u5E2FL\u99C6\u52D5+"
+    100070: "\u5C65\u5E2FL\u99C6\u52D5+_end"
+    100072: "\u5C65\u5E2FL\u99C6\u52D5_end"
+    100074: "\u5C65\u5E2FRA\u4ED8\u4E0E\u89AA"
+    100076: "\u5C65\u5E2FRA\u4ED8\u4E0E\u89AA_end"
+    100078: "\u5C65\u5E2FR\u4E0A2A"
+    100080: "\u5C65\u5E2FR\u4E0A2B"
+    100082: "\u5C65\u5E2FR\u4E0A2C"
+    100084: "\u5C65\u5E2FR\u4E0A2C_end"
+    100086: "\u5C65\u5E2FR\u4E0B2A"
+    100088: "\u5C65\u5E2FR\u4E0B2B"
+    100090: "\u5C65\u5E2FR\u4E0B2C"
+    100092: "\u5C65\u5E2FR\u4E0B2C_end"
+    100094: "\u5C65\u5E2FR\u4E0B4A"
+    100096: "\u5C65\u5E2FR\u4E0B4B"
+    100098: "\u5C65\u5E2FR\u4E0B4C"
+    100100: "\u5C65\u5E2FR\u4E0B4C_end"
+    100102: "\u5C65\u5E2FR\u4E0B6A"
+    100104: "\u5C65\u5E2FR\u4E0B6B"
+    100106: "\u5C65\u5E2FR\u4E0B6C"
+    100108: "\u5C65\u5E2FR\u4E0B6C_end"
+    100110: "\u5C65\u5E2FR\u8A98\u5C0E"
+    100112: "\u5C65\u5E2FR\u8A98\u5C0E+"
+    100114: "\u5C65\u5E2FR\u8A98\u5C0E+_end"
+    100116: "\u5C65\u5E2FR\u8A98\u5C0E_end"
+    100118: "\u5C65\u5E2FR\u99C6\u52D5"
+    100120: "\u5C65\u5E2FR\u99C6\u52D5+"
+    100122: "\u5C65\u5E2FR\u99C6\u52D5+_end"
+    100124: "\u5C65\u5E2FR\u99C6\u52D5_end"
+    100126: "\u5C65\u5E2F\u81EA\u52D5_L"
+    100128: "\u5C65\u5E2F\u81EA\u52D5_L_end"
+    100130: "\u5C65\u5E2F\u81EA\u52D5_R"
+    100132: "\u5C65\u5E2F\u81EA\u52D5_R_end"
+    100134: "\u652F\u6301\u8F2A1_L"
+    100136: "\u652F\u6301\u8F2A1_L_end"
+    100138: "\u652F\u6301\u8F2A1_R"
+    100140: "\u652F\u6301\u8F2A1_R_end"
+    100142: "\u652F\u6301\u8F2A2_L"
+    100144: "\u652F\u6301\u8F2A2_L_end"
+    100146: "\u652F\u6301\u8F2A2_R"
+    100148: "\u652F\u6301\u8F2A2_R_end"
+    100150: "\u652F\u6301\u8F2A3_L"
+    100152: "\u652F\u6301\u8F2A3_L_end"
+    100154: "\u652F\u6301\u8F2A3_R"
+    100156: "\u652F\u6301\u8F2A3_R_end"
+    100158: "\u652F\u6301\u8F2A4_L"
+    100160: "\u652F\u6301\u8F2A4_L_end"
+    100162: "\u652F\u6301\u8F2A4_R"
+    100164: "\u652F\u6301\u8F2A4_R_end"
+    100166: "\u8A98\u5C0E\u8F2AL"
+    100168: "\u8A98\u5C0E\u8F2AL_end"
+    100170: "\u8A98\u5C0E\u8F2AR"
+    100172: "\u8A98\u5C0E\u8F2AR_end"
+    100174: "\u8ECA\u4F53"
+    100176: "\u8ECA\u4F53 1"
+    100178: "\u8EE2\u8F2A1_L"
+    100180: "\u8EE2\u8F2A1_L_end"
+    100182: "\u8EE2\u8F2A1_R"
+    100184: "\u8EE2\u8F2A1_R_end"
+    100186: "\u8EE2\u8F2A2_L"
+    100188: "\u8EE2\u8F2A2_L_end"
+    100190: "\u8EE2\u8F2A2_R"
+    100192: "\u8EE2\u8F2A2_R_end"
+    100194: "\u8EE2\u8F2A3_L"
+    100196: "\u8EE2\u8F2A3_L_end"
+    100198: "\u8EE2\u8F2A3_R"
+    100200: "\u8EE2\u8F2A3_R_end"
+    100202: "\u8EE2\u8F2A4_L"
+    100204: "\u8EE2\u8F2A4_L_end"
+    100206: "\u8EE2\u8F2A4_R"
+    100208: "\u8EE2\u8F2A4_R_end"
+    100210: "\u8EE2\u8F2A5_L"
+    100212: "\u8EE2\u8F2A5_L_end"
+    100214: "\u8EE2\u8F2A5_R"
+    100216: "\u8EE2\u8F2A5_R_end"
+    100218: "\u8EE2\u8F2A6_L"
+    100220: "\u8EE2\u8F2A6_L_end"
+    100222: "\u8EE2\u8F2A6_R"
+    100224: "\u8EE2\u8F2A6_R_end"
+    100226: "\u8EE2\u8F2A7_L"
+    100228: "\u8EE2\u8F2A7_L_end"
+    100230: "\u8EE2\u8F2A7_R"
+    100232: "\u8EE2\u8F2A7_R_end"
+    100234: "\u8EE2\u8F2A8_L"
+    100236: "\u8EE2\u8F2A8_L_end"
+    100238: "\u8EE2\u8F2A8_R"
+    100240: "\u8EE2\u8F2A8_R_end"
+    100242: "\u8EE2\u8F2A_L"
+    100244: "\u8EE2\u8F2A_L_end"
+    100246: "\u8EE2\u8F2A_R"
+    100248: "\u8EE2\u8F2A_R_end"
+    100250: "\u99C6\u52D5\u8F2AL"
+    100252: "\u99C6\u52D5\u8F2AL_end"
+    100254: "\u99C6\u52D5\u8F2AR"
+    100256: "\u99C6\u52D5\u8F2AR_end"
+    400000: Camera
+    400002: //RootNode
+    400004: Lamp
+    400006: PMD from Metaseq
+    400008: PMD from Metaseq.001
+    400010: PMD from Metaseq_Arm
+    400012: PMD from Metaseq_Arm.001
+    400014: "\u30AF\u30E9\u30F3\u30AF_L"
+    400016: "\u30AF\u30E9\u30F3\u30AF_L_end"
+    400018: "\u30AF\u30E9\u30F3\u30AF_R"
+    400020: "\u30AF\u30E9\u30F3\u30AF_R_end"
+    400022: "\u5C65\u5E2FLA\u4ED8\u4E0E\u89AA"
+    400024: "\u5C65\u5E2FLA\u4ED8\u4E0E\u89AA_end"
+    400026: "\u5C65\u5E2FL\u4E0A2A"
+    400028: "\u5C65\u5E2FL\u4E0A2B"
+    400030: "\u5C65\u5E2FL\u4E0A2C"
+    400032: "\u5C65\u5E2FL\u4E0A2C_end"
+    400034: "\u5C65\u5E2FL\u4E0B2A"
+    400036: "\u5C65\u5E2FL\u4E0B2B"
+    400038: "\u5C65\u5E2FL\u4E0B2C"
+    400040: "\u5C65\u5E2FL\u4E0B2C_end"
+    400042: "\u5C65\u5E2FL\u4E0B4A"
+    400044: "\u5C65\u5E2FL\u4E0B4B"
+    400046: "\u5C65\u5E2FL\u4E0B4C"
+    400048: "\u5C65\u5E2FL\u4E0B4C_end"
+    400050: "\u5C65\u5E2FL\u4E0B6A"
+    400052: "\u5C65\u5E2FL\u4E0B6B"
+    400054: "\u5C65\u5E2FL\u4E0B6C"
+    400056: "\u5C65\u5E2FL\u4E0B6C_end"
+    400058: "\u5C65\u5E2FL\u8A98\u5C0E"
+    400060: "\u5C65\u5E2FL\u8A98\u5C0E+"
+    400062: "\u5C65\u5E2FL\u8A98\u5C0E+_end"
+    400064: "\u5C65\u5E2FL\u8A98\u5C0E_end"
+    400066: "\u5C65\u5E2FL\u99C6\u52D5"
+    400068: "\u5C65\u5E2FL\u99C6\u52D5+"
+    400070: "\u5C65\u5E2FL\u99C6\u52D5+_end"
+    400072: "\u5C65\u5E2FL\u99C6\u52D5_end"
+    400074: "\u5C65\u5E2FRA\u4ED8\u4E0E\u89AA"
+    400076: "\u5C65\u5E2FRA\u4ED8\u4E0E\u89AA_end"
+    400078: "\u5C65\u5E2FR\u4E0A2A"
+    400080: "\u5C65\u5E2FR\u4E0A2B"
+    400082: "\u5C65\u5E2FR\u4E0A2C"
+    400084: "\u5C65\u5E2FR\u4E0A2C_end"
+    400086: "\u5C65\u5E2FR\u4E0B2A"
+    400088: "\u5C65\u5E2FR\u4E0B2B"
+    400090: "\u5C65\u5E2FR\u4E0B2C"
+    400092: "\u5C65\u5E2FR\u4E0B2C_end"
+    400094: "\u5C65\u5E2FR\u4E0B4A"
+    400096: "\u5C65\u5E2FR\u4E0B4B"
+    400098: "\u5C65\u5E2FR\u4E0B4C"
+    400100: "\u5C65\u5E2FR\u4E0B4C_end"
+    400102: "\u5C65\u5E2FR\u4E0B6A"
+    400104: "\u5C65\u5E2FR\u4E0B6B"
+    400106: "\u5C65\u5E2FR\u4E0B6C"
+    400108: "\u5C65\u5E2FR\u4E0B6C_end"
+    400110: "\u5C65\u5E2FR\u8A98\u5C0E"
+    400112: "\u5C65\u5E2FR\u8A98\u5C0E+"
+    400114: "\u5C65\u5E2FR\u8A98\u5C0E+_end"
+    400116: "\u5C65\u5E2FR\u8A98\u5C0E_end"
+    400118: "\u5C65\u5E2FR\u99C6\u52D5"
+    400120: "\u5C65\u5E2FR\u99C6\u52D5+"
+    400122: "\u5C65\u5E2FR\u99C6\u52D5+_end"
+    400124: "\u5C65\u5E2FR\u99C6\u52D5_end"
+    400126: "\u5C65\u5E2F\u81EA\u52D5_L"
+    400128: "\u5C65\u5E2F\u81EA\u52D5_L_end"
+    400130: "\u5C65\u5E2F\u81EA\u52D5_R"
+    400132: "\u5C65\u5E2F\u81EA\u52D5_R_end"
+    400134: "\u652F\u6301\u8F2A1_L"
+    400136: "\u652F\u6301\u8F2A1_L_end"
+    400138: "\u652F\u6301\u8F2A1_R"
+    400140: "\u652F\u6301\u8F2A1_R_end"
+    400142: "\u652F\u6301\u8F2A2_L"
+    400144: "\u652F\u6301\u8F2A2_L_end"
+    400146: "\u652F\u6301\u8F2A2_R"
+    400148: "\u652F\u6301\u8F2A2_R_end"
+    400150: "\u652F\u6301\u8F2A3_L"
+    400152: "\u652F\u6301\u8F2A3_L_end"
+    400154: "\u652F\u6301\u8F2A3_R"
+    400156: "\u652F\u6301\u8F2A3_R_end"
+    400158: "\u652F\u6301\u8F2A4_L"
+    400160: "\u652F\u6301\u8F2A4_L_end"
+    400162: "\u652F\u6301\u8F2A4_R"
+    400164: "\u652F\u6301\u8F2A4_R_end"
+    400166: "\u8A98\u5C0E\u8F2AL"
+    400168: "\u8A98\u5C0E\u8F2AL_end"
+    400170: "\u8A98\u5C0E\u8F2AR"
+    400172: "\u8A98\u5C0E\u8F2AR_end"
+    400174: "\u8ECA\u4F53"
+    400176: "\u8ECA\u4F53 1"
+    400178: "\u8EE2\u8F2A1_L"
+    400180: "\u8EE2\u8F2A1_L_end"
+    400182: "\u8EE2\u8F2A1_R"
+    400184: "\u8EE2\u8F2A1_R_end"
+    400186: "\u8EE2\u8F2A2_L"
+    400188: "\u8EE2\u8F2A2_L_end"
+    400190: "\u8EE2\u8F2A2_R"
+    400192: "\u8EE2\u8F2A2_R_end"
+    400194: "\u8EE2\u8F2A3_L"
+    400196: "\u8EE2\u8F2A3_L_end"
+    400198: "\u8EE2\u8F2A3_R"
+    400200: "\u8EE2\u8F2A3_R_end"
+    400202: "\u8EE2\u8F2A4_L"
+    400204: "\u8EE2\u8F2A4_L_end"
+    400206: "\u8EE2\u8F2A4_R"
+    400208: "\u8EE2\u8F2A4_R_end"
+    400210: "\u8EE2\u8F2A5_L"
+    400212: "\u8EE2\u8F2A5_L_end"
+    400214: "\u8EE2\u8F2A5_R"
+    400216: "\u8EE2\u8F2A5_R_end"
+    400218: "\u8EE2\u8F2A6_L"
+    400220: "\u8EE2\u8F2A6_L_end"
+    400222: "\u8EE2\u8F2A6_R"
+    400224: "\u8EE2\u8F2A6_R_end"
+    400226: "\u8EE2\u8F2A7_L"
+    400228: "\u8EE2\u8F2A7_L_end"
+    400230: "\u8EE2\u8F2A7_R"
+    400232: "\u8EE2\u8F2A7_R_end"
+    400234: "\u8EE2\u8F2A8_L"
+    400236: "\u8EE2\u8F2A8_L_end"
+    400238: "\u8EE2\u8F2A8_R"
+    400240: "\u8EE2\u8F2A8_R_end"
+    400242: "\u8EE2\u8F2A_L"
+    400244: "\u8EE2\u8F2A_L_end"
+    400246: "\u8EE2\u8F2A_R"
+    400248: "\u8EE2\u8F2A_R_end"
+    400250: "\u99C6\u52D5\u8F2AL"
+    400252: "\u99C6\u52D5\u8F2AL_end"
+    400254: "\u99C6\u52D5\u8F2AR"
+    400256: "\u99C6\u52D5\u8F2AR_end"
+    4300000: PMD from Metaseq.001
+    4300002: PMD from Metaseq
+    9500000: //RootNode
+    13700000: PMD from Metaseq
+    13700002: PMD from Metaseq.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

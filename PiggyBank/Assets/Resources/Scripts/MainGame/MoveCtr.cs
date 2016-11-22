@@ -29,7 +29,7 @@ public class MoveCtr : MonoBehaviour {
     // 初期化
 	void Start () {
         // クライアントの操作対象であるならば、操作可能にする。
-        this.enabled = this.GetComponent<NetworkView>().isMine;
+        this.enabled = this.GetComponent<Game_PlayerControl>().isLocalPlayer;
 
         if (!this.enabled) return;
         

@@ -67,7 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHost: 0
   isReady: 0
-  nPlayersOrder: 0
+  nOrder: 0
 --- !u!114 &11447050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c51b97e15a1d5947883e381c641df9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nOrder: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

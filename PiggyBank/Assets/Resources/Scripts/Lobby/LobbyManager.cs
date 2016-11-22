@@ -28,7 +28,7 @@ public class LobbyManager : NetworkBehaviour {
            // 順序を設定しリストに追加
            int order = GetPlayerOrder();
            players.Insert(order,player);
-           player.GetComponent<Lobby_Player>().nPlayersOrder = order;
+           player.GetComponent<Lobby_Player>().nOrder = order;
            // UIアイコンに適用
            iconManager.SetUsingIcons(true, order);
            iconManager.SetReadyIcons(player.GetComponent<Lobby_Player>().isReady, order);
@@ -45,7 +45,7 @@ public class LobbyManager : NetworkBehaviour {
     {
         if (players.Count == 0) return;
         // UIアイコンに適用
-        int order = player.GetComponent<Lobby_Player>().nPlayersOrder;
+        int order = player.GetComponent<Lobby_Player>().nOrder;
         iconManager.SetUsingIcons(false, order);
         iconManager.SetReadyIcons(false, order);
         
@@ -59,7 +59,7 @@ public class LobbyManager : NetworkBehaviour {
         int order = 0;
         for(int i=0;i<players.Count;i++)
         {
-            if(((GameObject)players[i]).GetComponent<Lobby_Player>().nPlayersOrder != i)
+            if (((GameObject)players[i]).GetComponent<Lobby_Player>().nOrder != i)
             {
                 order = i;
                 break;
@@ -83,7 +83,8 @@ public class LobbyManager : NetworkBehaviour {
     // プレイヤーアイコンの準備状態を設定する
     public void SetPlayerIconReady(Lobby_Player player)
     {
-        iconManager.SetReadyIcons(player.isReady, player.nPlayersOrder);
+        int order = player.gameObject.GetComponent<Lobby_Player>().nOrder;
+        iconManager.SetReadyIcons(player.isReady, order);
     }
     // プレイヤーの準備状態をチェックする
     public bool CheckPlayersReady()
@@ -110,7 +111,7 @@ public class LobbyManager : NetworkBehaviour {
     {
         if (isGameStart) return;
 
-        if(!CheckPlayersReady())return;
+        //if(!CheckPlayersReady())return;
 
         isGameStart = true;
     }
@@ -132,4 +133,9 @@ public class LobbyManager : NetworkBehaviour {
         GameManager.Instance.ChangeMode(GAME_MODE.MAIN_GAME);
     }
     /*-----------------------------------------------------------------------------------*/
+    // 切断ボタン
+    public void OnStopHost()
+    {
+        NetworkManager.singleton.StopHost();
+    }
 }

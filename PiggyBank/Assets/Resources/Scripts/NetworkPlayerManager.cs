@@ -4,7 +4,8 @@ using UnityEngine.Networking;
 
 public class NetworkPlayerManager : NetworkBehaviour {
 
-    GameManager _GameManager = null;
+    // プレイヤー順序
+    public int nOrder = 0;
 
     void Start()
     {

@@ -10,8 +10,9 @@ public class Lobby_Player : NetworkBehaviour {
 
     [SyncVar(hook="SetIsReady")]
     public bool isReady = false;   // 準備フラグ
+
+    public int nOrder = 0; // プレイヤー順序
     
-    public int nPlayersOrder = 0; // プレイヤーの順序
     [SyncVar]
     private PIG_TYPE SelectType = PIG_TYPE.BALANCE; // 選択中タイプ
 
@@ -66,8 +67,6 @@ public class Lobby_Player : NetworkBehaviour {
     // サーバーから切断時
     public void NetworkDestroy()
     {
-
-        Debug.Log("RemoveLobby:"+this.gameObject.name);
         // リストから削除
         _lobbyManager.RemovePlayer(this.gameObject);
     }

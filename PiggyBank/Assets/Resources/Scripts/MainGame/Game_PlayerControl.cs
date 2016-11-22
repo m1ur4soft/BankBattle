@@ -15,6 +15,7 @@ public class Game_PlayerControl : NetworkBehaviour {
     // コンポーネント
     private GameObject Model = null;
 
+    /*-----------------------------------------------------------------------------------*/
 	// Use this for initialization
 	void Start () {
 	
@@ -30,7 +31,7 @@ public class Game_PlayerControl : NetworkBehaviour {
     {
         Debug.Log("RemoveGame");
     }
-
+    /*-----------------------------------------------------------------------------------*/
     /// <summary>
     /// ゲーム開始前 基本ステータスの設定
     /// </summary>
@@ -47,10 +48,20 @@ public class Game_PlayerControl : NetworkBehaviour {
         _Info = info;
 
         // タイプのモデルを子オブジェクトとして生成
-        Model = (GameObject)Instantiate(_ModelPrefabs[_Info.Type.GetHashCode()], Vector3.zero, Quaternion.identity);
+        Model = (GameObject)Instantiate(_ModelPrefabs[_Info.Type.GetHashCode()]);
         Model.transform.SetParent(this.transform);
+        Model.transform.localPosition = Vector3.zero;
 
         // 不必要なコンポーネントを非アクティブにする
         this.GetComponent<Lobby_Player>().enabled = false;
+    }
+    /*-----------------------------------------------------------------------------------*/
+    // スポーン座標を取得し、その座標に移動する。
+    public void SetupSpawnPoint(int idx)
+    {
+        Transform point = GameObject.Find("SpawnPoint").transform.GetChild(idx);
+        Debug.Log(point.name);
+         this.transform.position = point.position;
+
     }
 }

@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Custom_NetworkManager : NetworkManager {
 
-    public int nMaxPlayer;
    
 	// Use this for initialization
 	void Start () {

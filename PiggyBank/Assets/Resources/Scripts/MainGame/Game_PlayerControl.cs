@@ -54,6 +54,17 @@ public class Game_PlayerControl : NetworkBehaviour {
 
         // 不必要なコンポーネントを非アクティブにする
         this.GetComponent<Lobby_Player>().enabled = false;
+
+        // 必要なコンポーネントをアクティブにする
+        this.GetComponent<CapsuleCollider>().enabled = true;
+        this.GetComponent<MotionSync>().enabled = true;
+        this.GetComponent<MotionSync>().Setup();
+        this.GetComponent<Rigidbody>().useGravity = true;
+        if(isLocalPlayer)
+        {
+            this.GetComponent<MoveCtr>().enabled = true;
+            this.GetComponent<MoveCtr>().Setup();
+        }
     }
     /*-----------------------------------------------------------------------------------*/
     // スポーン座標を取得し、その座標に移動する。

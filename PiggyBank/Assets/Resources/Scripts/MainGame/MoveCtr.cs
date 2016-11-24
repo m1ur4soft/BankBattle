@@ -20,23 +20,21 @@ public class MoveCtr : MonoBehaviour {
     private Vector3 vDownpos = new Vector3();   // タッチされた座標保持用
     private float   fLength  = 0;               // ドラッグ距離
     private Vector3 vForward = new Vector3();   // 移動方向ベクトル
-    //private Vector3 vAngle   = new Vector3();   // 回転用ベクトル
-
-    /* 矢印用変数 */
-    //private float fArrowScaleY = 1.0f; // Y軸ローカルスケール
-    /*-----------------------------------------------------------------------------------*/
     
-    // 初期化
-	void Start () {
-        // クライアントの操作対象であるならば、操作可能にする。
-        this.enabled = this.GetComponent<NetworkView>().isMine;
-
-        if (!this.enabled) return;
-        
+    /*-----------------------------------------------------------------------------------*/
+    public void Setup()
+    {
         // Rigidbody取得
         _rigidbody = this.GetComponent<Rigidbody>();
+        // 矢印オブジェクト生成
+        _Arrow = (GameObject)Instantiate(_Arrow);
+        _Arrow.transform.SetParent(this.transform);
+        _Arrow.transform.localPosition = new Vector3(0.0f, 0.1f, 0.0f);
+        _Arrow.transform.localScale = new Vector3(1.5f, 0.0f, 1.5f);
+    }
+    // 初期化
+	void Start () {
 
-        SetArrowScale(0.0f);
 	}
 	// 更新処理
     void Update()
@@ -77,21 +75,24 @@ public class MoveCtr : MonoBehaviour {
 
                 // プレイヤーの回転
                 _transform.LookAt(this.transform.position + vForward, Vector3.up);
-
+                // 矢印の大きさ変更
                 SetArrowScale(fLength/10.0f);
             }
             // 離されたとき
             if (Input.GetMouseButtonUp(0))
             {
                 Debug.Log(fLength);
-                isMove = true; // 移動中に変更
-                _rigidbody.AddForce(vForward * fLength * fMoveSpeed); // ドラッグした距離によって方向ベクトルに飛ばす
-
+                // 移動中に変更
+                isMove = true; 
+                // ドラッグした距離によって方向ベクトルに飛ばす
+                _rigidbody.AddForce(vForward * fLength * fMoveSpeed); 
+                // 矢印の大きさ変更
                 SetArrowScale(0.0f);
             }
         }
     }
 
+    // 矢印のY軸スケールを指定した値に変更する
     private void SetArrowScale(float scaleY)
     {
         Vector3 arScale = _Arrow.transform.localScale;

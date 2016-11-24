@@ -24,6 +24,9 @@ public class Lobby_Player : NetworkBehaviour {
     {
         // ロビーで不必要なコンポーネントを非アクティブにする
         this.GetComponent<Game_PlayerControl>().enabled = false;
+        this.GetComponent<MoveCtr>().enabled = false;
+        this.GetComponent<CapsuleCollider>().enabled = false;
+        this.GetComponent<MotionSync>().enabled = false;
 
         // ロビーマネージャーの取得と自身をリストに追加
         _lobbyManager = GameObject.Find("LobbyManager").GetComponent<LobbyManager>();

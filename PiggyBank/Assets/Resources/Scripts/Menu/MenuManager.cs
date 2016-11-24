@@ -24,6 +24,7 @@ public class MenuManager : MonoBehaviour {
     // クライアントとして部屋に参加
     public void OnJoinGame()
     {
+        Debug.Log("Join");
         string ip = GameObject.Find("InputIPAddress").transform.FindChild("Text").GetComponent<Text>().text;
         NetworkManager.singleton.networkAddress = ip;
 

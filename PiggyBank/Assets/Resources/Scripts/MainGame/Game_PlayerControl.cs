@@ -3,17 +3,21 @@ using System.Collections;
 using UnityEngine.Networking;
 
 public class Game_PlayerControl : NetworkBehaviour {
+   
     
-    // 基本ステータス
-    [SerializeField][SyncVar(hook="SyncSetup")]
-    private PIG_INFO _Info;
 
-    // プレイヤーモデルプレハブ
+    /* プレハブ */
     [SerializeField]
-    private GameObject[] _ModelPrefabs;
+    private GameObject[] _ModelPrefabs; // モデルプレハブ
 
-    // コンポーネント
+    /* コンポーネント */
     private GameObject Model = null;
+
+    /* 変数 */
+    [SerializeField][SyncVar(hook = "SyncSetup")]
+    private PIG_INFO _Info; // 基本ステータス
+    [SyncVar]
+    private bool isAttack = false; // 攻撃中フラグ
 
     /*-----------------------------------------------------------------------------------*/
 	// Use this for initialization
@@ -32,10 +36,7 @@ public class Game_PlayerControl : NetworkBehaviour {
         Debug.Log("RemoveGame");
     }
     /*-----------------------------------------------------------------------------------*/
-    /// <summary>
-    /// ゲーム開始前 基本ステータスの設定
-    /// </summary>
-    /// <param name="type">モデルタイプ</param>
+    // ゲーム開始前 基本ステータスの設定
     [Command]
     public void CmdSetupInfo(PIG_TYPE type)
     {
@@ -66,7 +67,6 @@ public class Game_PlayerControl : NetworkBehaviour {
             this.GetComponent<MoveCtr>().Setup();
         }
     }
-    /*-----------------------------------------------------------------------------------*/
     // スポーン座標を取得し、その座標に移動する。
     public void SetupSpawnPoint(int idx)
     {
@@ -74,5 +74,26 @@ public class Game_PlayerControl : NetworkBehaviour {
         Debug.Log(point.name);
          this.transform.position = point.position;
 
+    }
+    /*-----------------------------------------------------------------------------------*/
+    // 衝突処理
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            if(isAttack)
+            {
+                float velScale = this.GetComponent<Rigidbody>().velocity.magnitude;
+                Vector3 vForce = this.transform.forward.normalized * velScale * _Info.Power;
+
+            }
+        }
+    }
+    /*-----------------------------------------------------------------------------------*/
+    /* セッター */
+    [Command]
+    public void CmdSetIsAttack(bool flag)
+    {
+        isAttack = flag;
     }
 }

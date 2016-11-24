@@ -8,6 +8,7 @@ public class MoveCtr : MonoBehaviour {
 
     /* コンポーネント */
     private Rigidbody _rigidbody;
+    private Game_PlayerControl _Control;
 
     /* キー入力用変数 */
     private bool isMove = false;
@@ -26,6 +27,8 @@ public class MoveCtr : MonoBehaviour {
     {
         // Rigidbody取得
         _rigidbody = this.GetComponent<Rigidbody>();
+        // Game_PlayerControl取得
+        _Control = this.GetComponent<Game_PlayerControl>();
         // 矢印オブジェクト生成
         _Arrow = (GameObject)Instantiate(_Arrow);
         _Arrow.transform.SetParent(this.transform);
@@ -48,6 +51,7 @@ public class MoveCtr : MonoBehaviour {
             {
                 _rigidbody.velocity = Vector3.zero;
                 isMove = false;
+                _Control.CmdSetIsAttack(false);
             }
         }
         else // 移動中ではない
@@ -82,6 +86,8 @@ public class MoveCtr : MonoBehaviour {
             if (Input.GetMouseButtonUp(0))
             {
                 Debug.Log(fLength);
+                // 攻撃中に変更
+                _Control.CmdSetIsAttack(true);
                 // 移動中に変更
                 isMove = true; 
                 // ドラッグした距離によって方向ベクトルに飛ばす

@@ -23,6 +23,8 @@ public class MotionSync : NetworkBehaviour{
     public void Setup()
     {
         _Transform = this.transform;
+        syncPos = _Transform.position;
+        syncRot = _Transform.rotation;
     }
 
     // Update is called once per frame
@@ -36,10 +38,9 @@ public class MotionSync : NetworkBehaviour{
     
     /*-----------------------------------------------------------------------------------*/
 
-    //角度を補間するメソッド
+    // 補間するメソッド
     void LerpMotion()
     {
-        //自プレイヤー以外のPlayerの時
         if (!isLocalPlayer)
         {
             _Transform.position = Vector3.Lerp(_Transform.position, syncPos, Time.deltaTime * lerpRate);
@@ -59,7 +60,7 @@ public class MotionSync : NetworkBehaviour{
     {
         if (isLocalPlayer)
         {
-            CmdProvideMotionToServer(_Transform.position,_Transform.rotation);
+            CmdProvideMotionToServer(_Transform.position, _Transform.rotation);
         }
     }	
 }

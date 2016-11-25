@@ -16,7 +16,8 @@ GameObject:
   - 114: {fileID: 11467872}
   - 54: {fileID: 5441986}
   - 136: {fileID: 13602288}
-  - 114: {fileID: 11451620}
+  - 114: {fileID: 11435234}
+  - 114: {fileID: 11402808}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -51,6 +52,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &11402808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa1aaa0228514b42af055e400384ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Transform: {fileID: 0}
+  lerpRate: 15
+  isSyncPos: 0
+  isSyncRot: 1
 --- !u!114 &11404540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62,17 +78,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9816ffd8c7566f54cb1f6dc1e3ee2bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ModelPrefabs:
+  - {fileID: 147666, guid: 0a5b44a65c45550448a302cbd189bdfc, type: 2}
+  - {fileID: 122552, guid: 83e3809160dd8ea448e5a46ef1838b9c, type: 2}
+  - {fileID: 104188, guid: 7823949a0e84dce44b6a4242f7b47412, type: 2}
+  - {fileID: 152316, guid: 6cf03e7283f4ac1469f15d7464e1c18d, type: 2}
   _Info:
     Type: 0
     Speed: 0
     Power: 0
     Size: 0
     Weight: 0
-  _ModelPrefabs:
-  - {fileID: 147666, guid: 0a5b44a65c45550448a302cbd189bdfc, type: 2}
-  - {fileID: 122552, guid: 83e3809160dd8ea448e5a46ef1838b9c, type: 2}
-  - {fileID: 104188, guid: 7823949a0e84dce44b6a4242f7b47412, type: 2}
-  - {fileID: 152316, guid: 6cf03e7283f4ac1469f15d7464e1c18d, type: 2}
+  isAttack: 0
+  fForce: 750
 --- !u!114 &11423490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,6 +105,26 @@ MonoBehaviour:
   isHost: 0
   isReady: 0
   nOrder: 0
+--- !u!114 &11435234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.04761905
+  m_SyncRotationAxis: 0
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &11447050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,17 +157,6 @@ MonoBehaviour:
     i15: 4
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &11451620
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aa1aaa0228514b42af055e400384ed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11463464
 MonoBehaviour:
   m_ObjectHideFlags: 1

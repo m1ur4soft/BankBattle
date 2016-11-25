@@ -14,6 +14,9 @@ public class MotionSync : NetworkBehaviour{
     [SerializeField]
     private float lerpRate = 15;
 
+    public bool isSyncPos = false;
+    public bool isSyncRot = false;
+
     // Use this for initialization
     void Start()
     {
@@ -43,16 +46,22 @@ public class MotionSync : NetworkBehaviour{
     {
         if (!isLocalPlayer)
         {
-            _Transform.position = Vector3.Lerp(_Transform.position, syncPos, Time.deltaTime * lerpRate);
-            _Transform.rotation = Quaternion.Lerp(_Transform.rotation,syncRot, Time.deltaTime * lerpRate);
+            if (isSyncPos)
+            {
+                _Transform.position = Vector3.Lerp(_Transform.position, syncPos, Time.deltaTime * lerpRate);
+            }
+            if (isSyncRot)
+            {
+                _Transform.rotation = Quaternion.Lerp(_Transform.rotation, syncRot, Time.deltaTime * lerpRate);
+            }
         }
     }
 
     [Command]
     void CmdProvideMotionToServer(Vector3 pos, Quaternion rot)
     {
-        syncPos = pos;
-        syncRot = rot;
+        if(isSyncPos)syncPos = pos;
+        if(isSyncRot)syncRot = rot;
     }
 
     [Client]

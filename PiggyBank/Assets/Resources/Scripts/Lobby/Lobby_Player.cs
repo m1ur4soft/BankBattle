@@ -26,6 +26,7 @@ public class Lobby_Player : NetworkBehaviour {
         this.GetComponent<Game_PlayerControl>().enabled = false;
         this.GetComponent<MoveCtr>().enabled = false;
         this.GetComponent<CapsuleCollider>().enabled = false;
+        this.GetComponent<NetworkTransform>().enabled = false;
         this.GetComponent<MotionSync>().enabled = false;
 
         // ロビーマネージャーの取得と自身をリストに追加

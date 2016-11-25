@@ -16,8 +16,10 @@ public class Game_PlayerControl : NetworkBehaviour {
     /* 変数 */
     [SerializeField][SyncVar(hook = "SyncSetup")]
     private PIG_INFO _Info; // 基本ステータス
-    [SyncVar]
+    [SyncVar][SerializeField]
     private bool isAttack = false; // 攻撃中フラグ
+
+    public float fForce = 100.0f;
 
     /*-----------------------------------------------------------------------------------*/
 	// Use this for initialization
@@ -60,6 +62,7 @@ public class Game_PlayerControl : NetworkBehaviour {
         this.GetComponent<CapsuleCollider>().enabled = true;
         this.GetComponent<MotionSync>().enabled = true;
         this.GetComponent<MotionSync>().Setup();
+        this.GetComponent<NetworkTransform>().enabled = true;
         this.GetComponent<Rigidbody>().useGravity = true;
         if(isLocalPlayer)
         {
@@ -84,7 +87,10 @@ public class Game_PlayerControl : NetworkBehaviour {
             if(isAttack)
             {
                 float velScale = this.GetComponent<Rigidbody>().velocity.magnitude;
-                Vector3 vForce = this.transform.forward.normalized * velScale * _Info.Power;
+
+                Vector3 vForce = this.transform.forward.normalized * fForce;
+
+                collision.gameObject.GetComponent<Rigidbody>().AddForce(vForce);
 
             }
         }
@@ -96,4 +102,5 @@ public class Game_PlayerControl : NetworkBehaviour {
     {
         isAttack = flag;
     }
+
 }

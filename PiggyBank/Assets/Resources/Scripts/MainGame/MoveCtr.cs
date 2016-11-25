@@ -14,13 +14,21 @@ public class MoveCtr : MonoBehaviour {
     private bool isMove = false;
 
     /* 移動用変数 */
-    public float fMoveSpeed     = 5.0f;     // 移動速度
-    public float fStopSpeed     = 5.0f;     // 移動停止判定速度
-    public float fStartLength   = 20.0f;    // 移動判定を行うドラッグ距離
+    [SerializeField]
+    private float fMoveSpeed     = 5.0f;     // 移動速度
+    [SerializeField]
+    private float fStopSpeed = 5.0f;     // 移動停止判定速度
+    // ドラッグ距離の最小値と最大値
+    [SerializeField]
+    private float Min_Length = 20.0f;
+    [SerializeField]
+    private float Max_Length = 250.0f; 
 
     private Vector3 vDownpos = new Vector3();   // タッチされた座標保持用
     private float   fLength  = 0;               // ドラッグ距離
     private Vector3 vForward = new Vector3();   // 移動方向ベクトル
+
+
     
     /*-----------------------------------------------------------------------------------*/
     public void Setup()
@@ -67,10 +75,10 @@ public class MoveCtr : MonoBehaviour {
             // タッチされている間
             if (Input.GetMouseButton(0))
             {
-                // ドラッグされている逆ベクトル取得
+                // ドラッグされている逆ベクトルを移動方向ベクトルとして取得
                 vForward = vDownpos - Input.mousePosition;
-                // 長さを取得
-                fLength = vForward.magnitude;
+                // 長さを取得、最大値を超えている場合最大値で設定
+                fLength = Mathf.Min( vForward.magnitude,Max_Length);
 
                 // Y軸とZ軸を入れ替える
                 vForward = vForward.normalized;
@@ -80,18 +88,21 @@ public class MoveCtr : MonoBehaviour {
                 // プレイヤーの回転
                 _transform.LookAt(this.transform.position + vForward, Vector3.up);
                 // 矢印の大きさ変更
-                SetArrowScale(fLength/10.0f);
+                SetArrowScale(fLength/20.0f);
             }
             // 離されたとき
             if (Input.GetMouseButtonUp(0))
             {
-                Debug.Log(fLength);
-                // 攻撃中に変更
-                _Control.CmdSetIsAttack(true);
-                // 移動中に変更
-                isMove = true; 
-                // ドラッグした距離によって方向ベクトルに飛ばす
-                _rigidbody.AddForce(vForward * fLength * fMoveSpeed); 
+                if (fLength >= Min_Length)
+                {
+                    // 攻撃中に変更
+                    _Control.CmdSetIsAttack(true);
+                    // 移動中に変更
+                    isMove = true;
+                    // ドラッグした距離によって方向ベクトルに飛ばす
+                    _rigidbody.AddForce(vForward * fLength * fMoveSpeed);
+                    
+                }
                 // 矢印の大きさ変更
                 SetArrowScale(0.0f);
             }

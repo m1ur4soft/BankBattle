@@ -42,7 +42,7 @@ public class Lobby_Player : NetworkBehaviour {
         GameObject.Find("SelectManager").GetComponent<Lobby_SelectManager>().SetLocalPlayer(this);
        
         // ホストフラグの設定
-        CmdHost();
+        CmdHost(isServer);
 
         // ボタン取得
         GameObject sb = GameObject.Find("StartButton"); // スタートボタン
@@ -79,9 +79,9 @@ public class Lobby_Player : NetworkBehaviour {
     // Command Method
     // Host
     [Command]
-    public void CmdHost()
+    public void CmdHost(bool flag)
     {
-        isHost = isServer;
+        isHost = flag;
     }
     // Ready
     [Command]

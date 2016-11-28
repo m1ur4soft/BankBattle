@@ -67,6 +67,7 @@ MonoBehaviour:
   lerpRate: 15
   isSyncPos: 0
   isSyncRot: 1
+  isSyncRigidbody: 1
 --- !u!114 &11404540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,7 +112,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182468}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
   m_Name: 
@@ -182,7 +183,8 @@ MonoBehaviour:
   _Arrow: {fileID: 145442, guid: 57a3376cfc0559742843d453dd48e3f7, type: 2}
   fMoveSpeed: 5
   fStopSpeed: 5
-  fStartLength: 20
+  Min_Length: 20
+  Max_Length: 250
 --- !u!114 &11482300
 MonoBehaviour:
   m_ObjectHideFlags: 1
